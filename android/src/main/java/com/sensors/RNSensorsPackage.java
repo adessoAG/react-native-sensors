@@ -13,7 +13,13 @@ import com.facebook.react.bridge.JavaScriptModule;
 
 public class RNSensorsPackage implements ReactPackage {
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-      return Arrays.<NativeModule>asList(new Gyroscope(reactContext), new Accelerometer(reactContext), new Magnetometer(reactContext), new Barometer(reactContext));
+      return Arrays.<NativeModule>asList(
+        new Gyroscope(reactContext),
+        new Accelerometer(reactContext),
+        new Magnetometer(reactContext),
+        new Barometer(reactContext),
+        new Orientation(reactContext)
+      );
     }
 
     public List<Class<? extends JavaScriptModule>> createJSModules() {
