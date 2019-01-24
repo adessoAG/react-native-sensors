@@ -53,6 +53,23 @@ const subscription = barometer.subscribe(({ pressure }) =>
 
 Please note that this sensor has no option to set the update rate.
 
+## orientation: Observable<{azimuth: number, accuracy: number, timestamp: string}>
+
+```js
+import { orientation } from "react-native-sensors";
+
+const subscription = orientation.subscribe(({ azimuth, accuracy, timestamp }) =>
+  console.log({ azimuth, accuracy, timestamp })
+);
+```
+
+The azimuth wil be a number between 0 and 360:
+
+* 0, when the device is facing magnetic north
+* 90, when the device is facing magnetic east
+* 180, when the device is facing magnetic south
+* 270, when the device is facing magnetic west
+
 ## setUpdateIntervalForType(type: string, interval: number)
 
 As the sensors are global we can only set the rate in which the hardware is read globally.
